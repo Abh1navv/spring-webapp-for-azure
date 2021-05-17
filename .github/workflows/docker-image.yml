@@ -21,12 +21,6 @@ jobs:
           distribution: 'adopt'
     - name: Build with Maven
       run: mvn clean package
-    - name: List current directory
-      run: ls -a
-    - name: Check target folder
-      run: |
-        cd target
-        ls -a
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag spring-web-app-for-azure:latest
     - name: Log into registry
