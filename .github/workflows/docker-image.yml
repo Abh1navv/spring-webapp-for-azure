@@ -22,7 +22,7 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag spring-web-app-for-azure:latest
+      run: docker build . --file Dockerfile --tag spring-webapp-for-azure:latest
     - name: Log into registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
     - name: Push image
